@@ -1,0 +1,12 @@
+***Tran Analysis
+Vin 1 0 pulse(0 5 0 0 0 100ms 200ms)
+R1 1 2 1.2K
+C1 2 0 0.1uF
+L1 2 0 100mH 
+.tran 0.2ms 1000ms
+.control
+run
+plot V(1) 
+plot V(2)
+.endc
+.end

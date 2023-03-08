@@ -1,0 +1,19 @@
+***Nandgate
+v1 3 0 pulse(0 5 0 0 0 10m 20m)
+v2 2 0 dc 5v
+v3 1 0 dc 5v
+vd 7 0 dc 5v
+.model nmod nmos level=54 version=4.7
+.model pmod pmos level=54 version=4.7
+m1n 4 1 0 0 nmod w=100u l=10u
+m2n 5 2 4 4 nmod w=100u l=10u
+m3n 6 3 5 5 nmod w=100u l=10u
+m1p 6 1 7 7 pmod w=100u l=10u
+m1p 6 2 7 7 pmod w=100u l=10u
+m1p 6 3 7 7 pmod w=100u l=10u
+.tran 0.1m 100m
+.control
+run
+plot v(6) v(3)
+.endc
+.end
